@@ -1,5 +1,6 @@
 :root {
-
+  --burger-line-heights:  clamp(1px, calc(var(--lh) * 2 + 0px), 4px);
+  --burger-line-margin:   calc(var(--burger-line-heights) * 2 + 0px);
   --burger-heights:       calc((var(--burger-line-heights) + var(--burger-line-margin)) * 3);
   --burger-width:         calc(var(--burger-line-heights) * 10 + 3px);
   
