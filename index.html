@@ -6,10 +6,39 @@
 </head>
 <body>
 <!-- 
-
+      <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact</a></li>
+      </ul>
 -->
 
-<a href="http://www.kangkon.com">Pups</a>
+  <nav>
+      <div class="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+      </div>
+  </nav>
+
+
+
+  <a href="http://www.kangkon.com">Pups</a>
+
+
+  <script>
+    function setVhCssVariable() {
+      const vh = Math.round((window.innerHeight * 0.01)/2);
+      document.documentElement.style.setProperty('--hp', `${vh}px`);
+    }
+
+    // Initial call
+    setVhCssVariable();
+
+    // Update on resize
+    window.addEventListener('resize', setVhCssVariable);
+  </script>
 
 </body>
 </html>
