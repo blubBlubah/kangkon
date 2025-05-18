@@ -29,15 +29,22 @@
 
   <script>
     function setVhCssVariable() {
-      const vh = Math.round((window.innerHeight * 0.01)/2);
+      const vh = Math.round((window.innerWidth * 0.01)/2);
       document.documentElement.style.setProperty('--hp', `${vh}px`);
+    }
+
+    function setBurgerLineHeights() {
+      const lh = Math.round(window.innerWidth * 0.005 * 1);
+      document.documentElement.style.setProperty('--lh', `${lh}px`);
     }
 
     // Initial call
     setVhCssVariable();
+    setBurgerLineHeights();
 
     // Update on resize
     window.addEventListener('resize', setVhCssVariable);
+    window.addEventListener('resize', setBurgerLineHeights);
   </script>
 
 </body>

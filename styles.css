@@ -1,8 +1,9 @@
 :root {
-  --burger-heights: calc(var(--hp) * 6); /* "rem" Get's defined with root font size*/
-  --burger-line-heights: calc(var(--hp) * 1)/*calc((var(--burger-heights))/6); /*MAXIMUM: calc(var(--burger-heights)/7)*/
-  /*--vh: 1vh; /* fallback */
 
+  --burger-heights:       calc((var(--burger-line-heights) + var(--burger-line-margin)) * 3);
+  --burger-width:         calc(var(--burger-line-heights) * 10 + 3px);
+  
+  --lh: 0.05vw; /* fallback */
 
 }
 
@@ -11,7 +12,7 @@ html, body, h1, a{
   width: 100%;
   background-color: #00aeff;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: calc(var(--hp) * 6); /*this defines the rem size*/
+  font-size: clamp(20px, calc(var(--lh) * 6), 30px); /*this defines the rem size*/
   color: rgb(255, 255, 255);
   margin: 0;
   display: flex;
@@ -28,12 +29,6 @@ a {
  width: auto;
 }
 
-
-/*
-
-*/
-
-
 nav {
   position:fixed;
   top: 0; 
@@ -44,14 +39,14 @@ nav {
 .burger {
   position: absolute;
   left: 0;
-  width: var(--burger-heights); /*34px*/
-  margin: calc(var(--hp) * 3); /*20px*/
+  width: var(--burger-width);
+  margin: var(--burger-heights);
   cursor: pointer;
 }
 
 .burger div {
-  height: var(--burger-line-heights);/*(height Zähler * 3 + margin Zähler * 4)/Nenner  muss = 1.*/
-  margin: 0 0 calc((var(--burger-heights) - 3 * var(--burger-line-heights)) / 3) 0;/*6px*/
+  height: var(--burger-line-heights);
+  margin: 0 0 var(--burger-line-margin) 0;
   background-color: #ffffff;
 }
 
