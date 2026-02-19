@@ -11,7 +11,7 @@
 html, body, h1, a{
   height: 100%;
   width: 100%;
-  background-color: #00aeff;
+  background-color: white;
   font-family: Arial, Helvetica, sans-serif;
   font-size: clamp(20px, calc(var(--lh) * 6), 30px); /*this defines the rem size*/
   color: rgb(255, 255, 255);
